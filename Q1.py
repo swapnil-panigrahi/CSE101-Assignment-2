@@ -10,7 +10,7 @@ menu = [("Samosa", 15), ("Idli", 30), ("Maggie", 50), ("Chilli Potato", 50), ("D
 printmenu()
 order_list=[]
 while True:
-    order=input("Enter your item number and quantity seperated by a \" \": ").strip()
+    order=input("Enter your item number and quantity seperated by a space: ").strip()
     if order=="":
         break
     else:
@@ -18,6 +18,10 @@ while True:
 
 print()
 for i in order_list:
-    print(menu[i[0]-1][0]+" "*(15-len(menu[i[0]-1][0]))+str(i[1]),"Rs",str(menu[i[0]-1][1]*i[1]))
+    if 0<i[0]-1<10:
+        print(menu[i[0]-1][0]+" "*(15-len(menu[i[0]-1][0]))+str(i[1]),"Rs",str(menu[i[0]-1][1]*i[1]))
+    else:
+        print("Item no.", i[0], "not in menu")
+        order_list.remove(i)
 else:
-    print("Total: "+str(sum([x[1] for x in order_list]))+" items\nRs "+str(sum([x[1]*menu[x[0]-1][1] for x in order_list])))
+    print("Total:"+" "*9+str(sum([x[1] for x in order_list]))+" Rs "+str(sum([x[1]*menu[x[0]-1][1] for x in order_list])))
