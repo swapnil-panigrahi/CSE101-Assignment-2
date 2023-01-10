@@ -25,4 +25,4 @@ for i in order_list:
         print("Item no.", i[0], "not in menu")
         order_list.remove(i)
 else:
-    print("Total:"+" "*9+str(sum([x[1] for x in order_list]))+" Rs "+str(sum([x[1]*menu[x[0]-1][1] for x in order_list])))
+    print("\nTotal:"+" "*9+str(sum([x[1] for x in order_list]))+" Rs "+str(sum([x[1]*menu[x[0]-1][1] for x in order_list])))
