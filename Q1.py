@@ -1,3 +1,4 @@
+
 def printmenu():
     global menu
     print(" \tItem"+" "*21+"Price")

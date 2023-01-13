@@ -1,0 +1,55 @@
+Akshat:
+Ayaan, 1
+Ansh, 1
+Aryan, 1
+Shradul, 1
+Samridh, 0
+Swapnil, 1
+
+Ayaan:
+Akshat, 1
+Ansh, 0
+Aryan, 1
+Shradul, 0
+Samridh, 1
+Swapnil, 0
+
+Ansh:
+Akshat, 1
+Ayaan, 0
+Aryan, 1
+Shradul, 0
+Samridh, 0
+Swapnil, 0
+
+Aryan:
+Akshat, 0
+Ayaan, 1
+Ansh, 1
+Shradul, 0
+Samridh, 1
+Swapnil, 1
+
+Shradul:
+Akshat, 1
+Ayaan, 0
+Ansh, 0
+Aryan, 1
+Samridh, 1
+Swapnil, 1
+
+Samridh:
+Akshat, 1
+Ayaan, 0
+Ansh, 0
+Aryan, 1
+Shradul, 1
+Swapnil, 1
+
+Swapnil:
+Akshat, 1
+Ayaan, 1
+Ansh, 1
+Aryan, 1
+Samridh, 1
+Shradul, 1
