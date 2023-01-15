@@ -20,11 +20,11 @@ while iterator<len(transcript):
     
     i=transcript[iterator]
     
-    if splitatnum(i[0])[0].isalpha() and splitatnum(i[0])[0].isupper() and splitatnum(i[0])[1].isnumeric() and i[1] in [1,2,4] and i[2] in ("A+","A","A-","B","B-","C","C-","D","F"):
+    if splitatnum(i[0])[0].isalpha() and splitatnum(i[0])[0].isupper() and splitatnum(i[0])[1].isnumeric() and int(i[1]) in [1,2,4] and i[2] in ("A+","A","A-","B","B-","C","C-","D","F"):
         print(i[0]+": "+i[2])
         iterator+=1
         
-    elif i[1] not in [1,2,4]:
+    elif int(i[1]) not in [1,2,4]:
         print("Invalid Credits")
         transcript.remove(i)
     
@@ -60,4 +60,4 @@ for i in transcript:
 
 x=[sgpa_calc[i]*int(transcript[i][1])/total_credits for i in range(len(sgpa_calc))]
 
-print("SGPA: ",sum(x))
+print("SGPA: ",round(sum(x),2))

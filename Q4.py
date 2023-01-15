@@ -27,7 +27,8 @@ while chances<=6:
                 print("Other letters: ", end="")
             
                 for i in wrong_place:
-                    print(i,end=' ')
+                    if i not in guessed:
+                        print(i,end=' ')
             else:
                 print("Good Game! Well Played")
                 break
@@ -35,4 +36,5 @@ while chances<=6:
         chances+=1
         
 else:
+    print("The word was:",chosen_word)
     print("Skill Issue! Get Good!")

@@ -20,7 +20,7 @@ while True:
         order_list.append(list(map(int,order.split())))
 
 for i in order_list:
-    if 0<i[0]-1<10:
+    if 0<=i[0]-1<10:
         print(menu[i[0]-1][0]+" "*(15-len(menu[i[0]-1][0]))+str(i[1]),"Rs",str(menu[i[0]-1][1]*i[1]))
     else:
         print("Item no.", i[0], "not in menu")

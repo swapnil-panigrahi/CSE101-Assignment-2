@@ -1,5 +1,5 @@
 def print_menu():
-    print("1) Insert a new entry")
+    print("\n1) Insert a new entry")
     print("2) Delete an entry")
     print("3) Find all matching entries given a partial name")
     print("4) Find the entry with a phone number or email")
@@ -8,6 +8,7 @@ def print_menu():
 with open("CSE101-Assignment-2/addrbook.txt","r") as F:
     phonebook=eval(F.readlines()[0].strip())
 
+print(phonebook)
 while True:
     print_menu()
     option=int(input())
@@ -20,9 +21,14 @@ while True:
             phone=int(input("Enter phone no.: "))
             email=input("Enter email: ")
             
-            temp_dict={'address':address,'phone':phone,'email':email}
-            phonebook[name.title()]=temp_dict
+            temp_dict=[{'address':address,'phone':phone,'email':email}]
+            if name.title() not in phonebook:
+                phonebook[name.title()]=temp_dict
+            else:
+                phonebook[name.title()]+=temp_dict
             
+            print(phonebook)    
+        
         elif option==2:
             name=input("Enter name: ")
             
@@ -40,18 +46,41 @@ while True:
                 pno=int(input("Enter phone no.: ").strip())
                 email=input("Enter email: ").strip()
             
-                if not (pno and email):
+                if not (pno or email):
                     print("Enter atleast one of the required fields\n")
-                else:
+                elif pno and email:
                     for i in phonebook:
-                        for j in phonebook[i]:
-                            if phonebook[i][j]==pno or phonebook[i][j]==email:
-                                print(phonebook[i])
+                        for j in range(len(phonebook[i])):
+                            for k in phonebook[i][j]:
+                                if phonebook[i][j][k]==pno and phonebook[i][j][k]==email:
+                                    print(phonebook[i][j])
+                                    break
                             else:
                                 print("No such entry found!")
+                                break
+                        else:
+                            break
+                    else:
+                        break
+                    
+                else:
+                    for i in phonebook:
+                        for j in range(len(phonebook[i])):
+                            for k in phonebook[i][j]:
+                                if phonebook[i][j][k]==pno or phonebook[i][j][k]==email:
+                                    print(phonebook[i][j])
+                                    break
+                            else:
+                                print("No such entry found!")
+                                break
+                        else:
+                            break
+                    else:
+                        break
+                    
         else:
             break
         
-F=open("CSE101-Assignment-2/addressbook.txt","w")
+F=open("CSE101-Assignment-2/addrbook.txt","w")
 F.write(str(phonebook))
 F.close()
