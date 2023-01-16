@@ -60,4 +60,7 @@ for i in transcript:
 
 x=[sgpa_calc[i]*int(transcript[i][1])/total_credits for i in range(len(sgpa_calc))]
 
-print("SGPA: ",round(sum(x),2))
+if len(x)>0:
+    print("SGPA: ",round(sum(x),2))
+else:
+    print("No courses to calculate SGPA from")

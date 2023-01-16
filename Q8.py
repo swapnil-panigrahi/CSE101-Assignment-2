@@ -38,6 +38,7 @@ for i in imp_val:
         if i==j[1] and j[0] not in final_ans:
             final_ans.append([j[0],round(j[1],3)])
             items_imp.remove(j)
-            
-for i in final_ans[::-1]:
+      
+n=int(input("Enter N:"))      
+for i in final_ans[:n:-1]:
     print(i)
