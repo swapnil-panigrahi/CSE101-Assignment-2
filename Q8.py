@@ -30,13 +30,14 @@ for i in pages:
 
 imp_val=list(importance.values())
 imp_val.sort()
-items_imp=importance.items()
+items_imp=list(importance.items())
 
 final_ans=[]
 for i in imp_val:
     for j in items_imp:
         if i==j[1] and j[0] not in final_ans:
-            final_ans.append(j[0])
+            final_ans.append([j[0],round(j[1],3)])
+            items_imp.remove(j)
             
 for i in final_ans[::-1]:
     print(i)
