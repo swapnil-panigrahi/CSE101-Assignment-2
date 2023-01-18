@@ -8,7 +8,6 @@ def print_menu():
 with open("CSE101-Assignment-2/addrbook.txt","r") as F:
     phonebook=eval(F.readlines()[0].strip())
 
-print(phonebook)
 while True:
     print_menu()
     option=int(input())
