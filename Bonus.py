@@ -1,6 +1,5 @@
 #Bonus
-
-# Question done by Ishaan Agrawal (2022221), Aarav Mathur (2022005), and Swapnil Panigrahi (2022522)
+#Question done by Ishaan Agrawal (2022221), Aarav Mathur (2022005), and Swapnil Panigrahi (2022522)
 
 import requests
 IPAddress = requests.get("https://api.ipify.org") 
