@@ -18,6 +18,10 @@ while True:
         break
     else:
         order_list.append(list(map(int,order.split())))
+        
+    if order_list[-1][1]<0:
+        print("Negative Value detected! Removing entry...")
+        order_list.pop()
 
 for i in order_list:
     if 0<=i[0]-1<10:
